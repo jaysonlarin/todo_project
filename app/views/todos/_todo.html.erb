@@ -1,0 +1,15 @@
+<div id="<%= dom_id todo %>">
+  <p>
+    <strong>Name:</strong>
+    <%= todo.name %>
+  </p>
+
+  <p>
+    <strong>Finished:</strong>
+    <%= todo.finished %>
+  </p>
+
+  <p>
+    <%= link_to 'Add Task', new_todo_task_path(todo_id: todo) %>
+  </p>
+</div>
