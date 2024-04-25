@@ -1,24 +1,49 @@
-# README
+A simple application for ToDo's and add different tasks for each Todo.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Get all tasks for a Todo. (get request)
+```
+http://localhost:3000/todos/1/tasks.json
+```
 
-Things you may want to cover:
+Get a task for a Todo. (get request)
+```
+http://localhost:3000/todos/1/tasks/1.json
+```
 
-* Ruby version
+Delete a task for a Todo. (delete request)
+```
+http://localhost:3000/todos/1/tasks/1.json
+```
 
-* System dependencies
+Create a task for a Todo. (post request)
+```
+http://localhost:3000/todos/1/tasks.json
+```
+with a json body
+```
+{
+    "task": {
+        "description": "hello there",
+        "finished": false
+    }
+}
+```
+note:
+- sequence is automatically created.
+- finished default is false
 
-* Configuration
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Update a task for a Todo. (patch request)
+```
+http://localhost:3000/todos/1/tasks/1.json
+```
+with a json body
+```
+{
+    "task": {
+        "description": "hello there",
+        "sequence": 2,
+        "finished": true
+    }
+}
+```
